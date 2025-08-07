@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  color: #ffffff;
+}
+
+.main_container {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #121212 40%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+#game_name {
+  color: #00ffe1;
+  padding-top: 30px;
+  font-size: 40px;
+  height: 7%;
+  margin: auto;
+  text-shadow: 0 0 10px #00ffe1;
+}
+
+.winner {
+  font-size: 30px;
+  color: #ffffff;
+  height: 5%;
+  margin: auto;
+  text-shadow: 0 0 5px #ffffff;
+}
+
+main {
+  height: 58%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.grid_container {
+  height: 450px;
+  width: 450px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  display: none;
+}
+
+.box {
+  border-radius: 20px;
+  background-color: #1f1f1f;
+  font-size: 50px;
+  font-weight: 700;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 20px #ffcc00;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover:not(:disabled) {
+  box-shadow: 0 0 30px #ffffff;
+  transform: scale(1.05);
+}
+
+.box:disabled {
+  background-color: #555;
+  color: #999;
+  box-shadow: none;
+}
+
+.ply_btn {
+  height: 70px;
+  border-radius: 10px;
+  width: 150px;
+  font-size: 20px;
+  font-weight: 700;
+  background: #00ffe1;
+  color: #000;
+  box-shadow: 0 0 15px #00ffe1;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ply_btn:hover {
+  transform: scale(1.05);
+}
+
+.win_detail {
+  height: 10%;
+  width: 200px;
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  gap: 5px;
+}
+
+.win_detail > .no_of_win {
+  width: 100%;
+  height: 40%;
+  margin: 0;
+  font-size: medium;
+  color: #00ffe1;
+  text-align: center;
+  font-weight: 700;
+}
+
+.win_count {
+  height: 60%;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  font-size: large;
+  font-weight: 700;
+  gap: 30px;
+}
+
+.o_win_count,
+.x_win_count {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: #000;
+  border-radius: 20px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #00ffe1;
+}
+
+.new_reset_button {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  /* border: 1px solid red; */
+}
+
+.change,
+#Rock_ppr_scissor {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: #ffcc00;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  box-shadow: 0 0 15px #ffcc00;
+  transition: transform 0.5ms ease-in-out;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.change:active {
+  transform: scale(0.8);
+  color: black;
+}
+
+/* Updated animations */
+@keyframes slideInTop {
+  from {
+    transform: translateY(-200px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-200px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(200px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(200px) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media queries untouched */
+@media (max-width: 768px) and (min-width: 450px) {
+  .grid_container {
+    height: 400px;
+    width: 400px;
+  }
+  .main_container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 454px) and (min-width: 395px) {
+  .grid_container {
+    height: 300px;
+    width: 300px;
+  }
+  .main_container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 394px) and (min-width: 300px) {
+  .grid_container {
+    height: 270px;
+    width: 270px;
+  }
+  .main_container {
+    gap: 15px;
+  }
+  .change {
+    height: 50px;
+    width: 120px;
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(9px);
+  animation: pulseContainer 3s infinite;
+}
+
+@keyframes pulseContainer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.scoreboard div {
+  background: #fff2;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff;
+  transition: transform 0.3s ease;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.choice {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.choice img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choice:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #fff;
+}
+
+.result {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  background: #fff1;
+  padding: 15px;
+  border-radius: 10px;
+  animation: blinkText 2s infinite;
+}
+
+@keyframes blinkText {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

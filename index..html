@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tic_tac_toe.css" />
+    <title>tic-tac-toe</title>
+  </head>
+  <body>
+    <div class="main_container">
+      <p id="game_name">Tic Tac Toe</p>
+      <div class="winner"></div>
+      <main>
+        <div class="grid_container">
+          <button class="box left"></button>
+          <button class="box top"></button>
+          <button class="box right"></button>
+          <button class="box left"></button>
+          <button class="box scale"></button>
+          <button class="box right"></button>
+          <button class="box left"></button>
+          <button class="box bottom"></button>
+          <button class="box right"></button>
+        </div>
+        <button class="ply_btn">Play!</button>
+      </main>
+      <div class="win_detail">
+        <div class="no_of_win">Number of WIN!</div>
+        <div class="win_count">
+          <div class="o_win_count">O :</div>
+          <div class="x_win_count">X :</div>
+        </div>
+      </div>
+      <div class="new_reset_button">
+        <button class="change" id="new_btn">New Game</button>
+        <button class="change" id="reset_btn">Reset</button>
+
+        <a
+          class="change"
+          id="rock_ppr_scissor"
+          href="stone_ppr_scissor.html"
+          target="_blank"
+          >Play🪨📄✂️</a
+        >
+      </div>
+    </div>
+    <script src="tic_tac_toe.js"></script>
+  </body>
+</html>
